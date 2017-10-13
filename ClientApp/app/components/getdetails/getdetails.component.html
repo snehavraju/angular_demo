@@ -1,0 +1,21 @@
+
+
+  
+  
+
+  <table class='table' *ngIf="student">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let students of student">
+            <td>{{ students.id }}</td>
+            <td>{{ students.firstName }}</td>
+            <td>{{ students.lastName }}</td>
+        </tr>
+    </tbody>
+</table>

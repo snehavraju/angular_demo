@@ -1,0 +1,9 @@
+<form >
+  Id:<br>
+  <input #inputid type="text" name="id"  ><br>
+  First name:<br>
+  <input #inputfn type="text" name="firstname"  ><br>
+  Last name:<br>
+  <input #inputln type="text" name="lastname" ><br><br>
+  <button (click)='addnames(inputid.value,inputfn.value,inputln.value)' >Submit</button>
+</form>
