@@ -1,3 +1,4 @@
+import { ProductInfo } from './../../ProductInfo';
 import { FullName } from './../../FullName';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
@@ -7,11 +8,11 @@ import { Router, ActivatedRoute, ParamMap,NavigationEnd } from '@angular/router'
 
 
 @Component({
-    selector: 'getdetails',
-    templateUrl: './getdetails.component.html'
+    selector: 'productinfo',
+    templateUrl: './productinfo.component.html'
 })
-export class GetdetailsComponent implements OnInit {
-    public student: FullName[];
+export class ProductinfoComponent implements OnInit {
+    public product: ProductInfo[];
 
     public static returned: Subject<any> = new Subject();
     
@@ -32,18 +33,18 @@ export class GetdetailsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.http.get(this.baseUrl + 'api/Name').subscribe(result => {
-            this.student = result.json() as FullName[];
+        this.http.get(this.baseUrl + 'api/Productinfo').subscribe(result => {
+            this.product = result.json() as ProductInfo[];
         }, error => console.error(error));
               
         
             
                
     }
-    deletename(id:number){
+    deleteproduct(id:number){
         
-        this.http.delete(this.baseUrl+'api/Name/'+id).subscribe((success) => {this.http.get(this.baseUrl+'api/Name').subscribe(result => {
-            this.student = result.json() as FullName[];}, error => console.error(error));
+        this.http.delete(this.baseUrl+'api/Productinfo/'+id).subscribe((success) => {this.http.get(this.baseUrl+'api/ProductInfo').subscribe(result => {
+            this.product = result.json() as ProductInfo[];}, error => console.error(error));
             
           },);
         

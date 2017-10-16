@@ -12,7 +12,8 @@ namespace Demo.Models
         {
         }
 
-        public DbSet<FullName> Namedetails { get; set; }
+        public DbSet<FullName> Product_Group { get; set; }
+        public DbSet<ProductInfo> Product_Info {get;set;}
         
 
     }

@@ -24,11 +24,20 @@ export class AdddetailsComponent {
 
     addnames(id:number,firstname:string,lastname:string) {
         
-                 
+        this.entries=new FullName(id,firstname);
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        this.http.post(this.baseUrl+'api/Name', JSON.stringify({id:id,firstname:firstname,lastname:lastname}), { headers: headers }).subscribe();
+        this.http.post(this.baseUrl+'api/Name', JSON.stringify(this.entries), { headers: headers }).subscribe();
         //this.http.post(this.baseUrl+'api/Name', this.entry,{headers:headers}).subscribe();
                
     }  
+
+    updatenames(id:number,firstname:string,lastname:string){
+
+        this.entries=new FullName(id,firstname);
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json; charset=utf-8');
+        this.http.put(this.baseUrl+'api/Name/'+id , JSON.stringify(this.entries), { headers: headers }).subscribe();
+
+    }
 }

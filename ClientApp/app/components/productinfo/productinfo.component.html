@@ -1,0 +1,37 @@
+
+
+  
+  
+
+  <table class='table' *ngIf="product">
+        <thead>
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>ProductDescription</th>
+                <th>ProductRate</th>
+                <th>GroupId</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let products of product">
+                <td>{{ products.productId }}</td>
+                <td>{{ products.productName }}</td>
+                <td>{{ products.productDescription }}</td>
+                <td>{{ products.productRate }}</td>
+                <td>{{ products.groupId }}</td>
+                
+                <button (click)='deleteproduct(products.productId)'  >Delete</button>    
+                <button [routerLink]="['./updateproduct']"  >     Update</button>
+                </tr>
+        </tbody>
+    </table>
+    <br><br>
+    
+    <button [routerLink]="['./addproductform']" >Add Product</button>
+    
+    <router-outlet></router-outlet>
+    
+    
+    

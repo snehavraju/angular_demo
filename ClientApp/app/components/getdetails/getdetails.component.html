@@ -7,15 +7,24 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>FirstName</th>
-            <th>LastName</th>
+            <th>GroupName</th>
+            
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let students of student">
             <td>{{ students.id }}</td>
-            <td>{{ students.firstName }}</td>
-            <td>{{ students.lastName }}</td>
-        </tr>
+            <td>{{ students.groupName }}</td>
+            
+            <button (click)='deletename(students.id)'  >Delete</button>    
+            <button [routerLink]="['./updateform']"  >     Update</button>
+            </tr>
     </tbody>
 </table>
+<br><br>
+
+<button [routerLink]="['./addgroupform']" >Add Groups</button>
+
+<router-outlet></router-outlet>
+
+

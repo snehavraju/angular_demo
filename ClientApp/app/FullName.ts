@@ -1,6 +1,13 @@
 export class FullName {
     Id:number;
-    FirstName: string;
-    LastName:string;
+    GroupName: string;
     
+    
+    constructor(_id:number,_firstname:string)
+    {
+        this.Id=_id;
+        this.GroupName=_firstname;
+       
+
+    }
 }

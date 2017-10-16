@@ -1,0 +1,24 @@
+
+<router-outlet></router-outlet>
+<h3>Add a product!</h3>
+
+
+    
+<form >
+        ProductId:<br>
+        <input #inputid type="text" name="id"  ><br>
+        Product Name:<br>
+        <input #inputpn type="text" name="firstname"  ><br>
+        Product Description:<br>
+        <input #inputpd type="text" name="firstname"  ><br>
+        Product Rate:<br>
+        <input #inputr type="text" name="firstname"  ><br>
+        Group Id:<br>
+        <input #inputgid type="text" name="firstname"  ><br>
+        <br><br>
+        
+        <button (click)='addproduct(inputid.value,inputpn.value,inputpd.value,inputr.value,inputgid.value)' >Add</button>
+      </form>
+    
+    
+    

@@ -1,0 +1,10 @@
+
+<form >
+    Id:<br>
+    <input #inputid type="text" name="id"  ><br>
+    Group name:<br>
+    <input #inputfn type="text" name="firstname"  ><br>
+    <br><br>
+    
+    <button (click)='updatenames(inputid.value,inputfn.value)' >Update</button>
+  </form>
